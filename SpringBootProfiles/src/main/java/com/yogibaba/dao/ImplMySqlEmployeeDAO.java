@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import com.yogibaba.model.Employee;
 @Repository("sqlDAO")
-@Profile({"dev,test"})
+//@Profile({"dev,test"})
 public class ImplMySqlEmployeeDAO implements IEmployeeDao {
 	
 	private final static  String GET_EMPLOYEE_DETAILS= "SELECT ENO , ENAME , ESAL,EADD, EDESIGNATION , EHIKE FROM EMPLOYEE WHERE EDESIGNATION IN (?,?,?)";  
