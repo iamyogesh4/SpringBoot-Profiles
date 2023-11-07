@@ -10,9 +10,12 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Repository;
 
 import com.yogibaba.model.Employee;
-
+@Repository("sqlDAO")
+@Profile({"dev,test"})
 public class ImplMySqlEmployeeDAO implements IEmployeeDao {
 	
 	private final static  String GET_EMPLOYEE_DETAILS= "SELECT ENO , ENAME , ESAL,EADD, EDESIGNATION , EHIKE FROM EMPLOYEE WHERE EDESIGNATION IN (?,?,?)";  
